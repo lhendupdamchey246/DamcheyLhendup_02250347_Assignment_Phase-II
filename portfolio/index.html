@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Personal Portfolio — Your Name</title>
+  <meta name="description" content="Personal portfolio showcasing projects, skills and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#6ee7b7; /* mint */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:linear-gradient(180deg,#071026 0%, #071426 60%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.45;
+    }
+    .container{max-width:1100px;margin:0 auto;padding:32px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#8bd5ff);display:flex;align-items:center;justify-content:center;font-weight:800;color:#042;}
+    nav{display:flex;gap:18px;align-items:center}
+    a.navlink{color:var(--muted);text-decoration:none;font-weight:600}
+    a.navlink:hover{color:var(--accent)}
+    .cta{background:var(--accent);color:#042;padding:8px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:32px;align-items:center;padding:48px 0}
+    .hero-left h1{font-size:34px;margin:0 0 10px}
+    .hero-left p{color:var(--muted);margin:0 0 18px}
+    .cta-row{display:flex;gap:12px}
+    .profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:16px;box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+    .avatar{width:100%;height:260px;border-radius:12px;background:linear-gradient(135deg,#123 60%,#246);display:flex;align-items:center;justify-content:center;font-size:20px}
+    .meta{display:flex;gap:12px;margin-top:12px;justify-content:space-between}
+
+    /* Sections */
+    section{padding:28px 0;border-top:1px solid rgba(255,255,255,0.02)}
+    h2{margin:0 0 14px}
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);padding:16px;border-radius:12px}
+    .project-thumb{height:150px;border-radius:10px;background:linear-gradient(90deg,#0a2540,#1b3a5b);display:flex;align-items:center;justify-content:center}
+    .skills{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{background:var(--glass);padding:8px 10px;border-radius:999px;color:var(--muted);font-weight:600}
+
+    /* Contact */
+    form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    form textarea{grid-column:1/-1;min-height:120px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
+    input,textarea{padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
+    button{grid-column:1/-1;padding:12px;border-radius:10px;border:0;background:var(--accent);color:#042;font-weight:700}
+
+    /* Footer */
+    footer{padding:20px 0;text-align:center;color:var(--muted);font-size:14px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      form{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      .grid-3{grid-template-columns:1fr}
+      header{flex-direction:column;gap:12px;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">DL</div>
+        <div>
+          <div style="font-weight:700">Damchey Lhendup</div>
+          <div style="font-size:12px;color:var(--muted)">Frontend Developer • Designer</div>
+        </div>
+      </div>
+      <nav>
+        <a class="navlink" href="#projects">Projects</a>
+        <a class="navlink" href="#about">About</a>
+        <a class="navlink" href="#contact">Contact</a>
+        <a class="cta" href="#contact">Hire Me</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <h1>Hi, I’m Damchey Lhendup — I build beautiful, accessible websites.</h1>
+          <p>I’m a frontend developer specializing in building (and occasionally designing) exceptional digital experiences. Currently open to new opportunities.</p>
+          <div class="cta-row">
+            <a class="cta" href="#projects">See my work</a>
+            <a class="navlink" href="/resume.pdf" target="_blank">Download Resume</a>
+          </div>
+
+          <div style="margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+            <div style="background:var(--card);padding:12px;border-radius:10px;text-align:center">
+              <div style="font-size:18px;font-weight:700">beginner</div>
+              <div style="color:var(--muted);font-size:13px">Years experience</div>
+            </div>
+            <div style="background:var(--card);padding:12px;border-radius:10px;text-align:center">
+              <div style="font-size:18px;font-weight:700">7</div>
+              <div style="color:var(--muted);font-size:13px">Projects shipped</div>
+            </div>
+            <div style="background:var(--card);padding:12px;border-radius:10px;text-align:center">
+              <div style="font-size:18px;font-weight:700">5</div>
+              <div style="color:var(--muted);font-size:13px">Open-source</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <div><img src="../portfolio\my  picture.jpg" alt="your photo" style="width:600px; height:400px; border-50%; object-fit:cover; "></div>
+          <div class="meta">
+            <div>
+              <div style="font-weight:700">Software Engineering</div>
+              <div style="font-size:13px;color:var(--muted)">Phuntsholing, Bhutan</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-weight:700">Available for:</div>
+              <div style="font-size:13px;color:var(--muted)">Freelance & recruitment</div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="projects">
+        <h2>Selected Projects</h2>
+        <div class="grid-3">
+          <!-- Project 1 -->
+          <article class="card">
+            <div><img src="../portfolio\Insta.jpeg" alt="your photo" style="width:300px; height:200px; border-50%; object-fit:cover; "></div>
+            <h3 style="margin-top:12px;margin-bottom:6px">Instragram web page</h3>
+            <p style="color:var(--muted);margin:0 0 12px;font-size:14px">Instagram is a social media website where users share photos, videos, and stories, follow others, and explore visual content in a clean, simple layout. it was done by using figma and web site of instagram</p>
+            <div style="display:flex;gap:8px;align-items:center">
+              <a class="cta" href="#" style="padding:8px 12px">Source</a>
+              <a class="navlink" href="#">Figma and website of instagram</a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="card">
+            <div><img src="../portfolio\Bank.jpeg" alt="your photo" style="width:300px; height:200px; border-50%; object-fit:cover; "></div>
+            <h3 style="margin-top:12px;margin-bottom:6px">Druk Bank app</h3>
+            <p style="color:var(--muted);margin:0 0 12px;font-size:14px">It was design in such a way that any one could easily use this without and obstacles.Which is far better than other bank app. It was done through figma website and other online resources.</p>
+            <div style="display:flex;gap:8px;align-items:center">
+              <a class="cta" href="#" style="padding:8px 12px">Source</a>
+              <a class="navlink" href="#">Figma</a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="card">
+            <div><img src="../portfolio\Cst.jpeg" alt="your photo" style="width:300px; height:200px; border-50%; object-fit:cover; "></div>
+            <h3 style="margin-top:12px;margin-bottom:6px">CST web page</h3>
+            <p style="color:var(--muted);margin:0 0 12px;font-size:14px">This was design to make people for easy to order their favourite food at anytime from there place. This was done through figma and html code for farther responsive.</p>
+            <div style="display:flex;gap:8px;align-items:center">
+              <a class="cta" href="#" style="padding:8px 12px">Source</a>
+              <a class="navlink" href="#">Figma and Html</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>About Me</h2>
+        <div style="display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:start">
+          <div>
+            <p style="color:var(--muted)">I’m Damchey Lhendup a frontend developer focusing on building accessible, high-performance websites. I enjoy turning ideas into delightful user experiences — from prototype to production. My toolbelt includes JavaScript (ES6+), React, TypeScript, Node.js, and design tools like Figma.</p>
+
+            <h3 style="margin-top:18px">Skills</h3>
+            <div class="skills" style="margin-top:8px">
+              <div class="chip">HTML</div>
+              <div class="chip">CSS</div>
+              <div class="chip">JavaScript</div>
+              <div class="chip">Pthon</div>
+              <div class="chip">TypeScript</div>
+              <div class="chip">Figma</div>
+            </div>
+          </div>
+
+          <div style="background:var(--card);padding:16px;border-radius:10px">
+            <h4 style="margin:0 0 8px">Contact</h4>
+            <p style="color:var(--muted);margin:0 0 12px">Email: <a href="mailto:you@example.com">lhendupdamchey@gmail.com</a></p>
+            <p style="color:var(--muted);margin:0 0 12px">Phone: <span style="color:var(--muted)">17306687</span></p>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <a class="navlink" href="#">Twitter</a>
+              <a class="navlink" href="#">GitHub</a>
+              <a class="navlink" href="#">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Get in touch</h2>
+        <div style="display:grid;grid-template-columns:1fr 420px;gap:20px">
+          <div style="background:var(--card);padding:16px;border-radius:10px">
+            <p style="color:var(--muted)">Interested in working together? Fill out the form and I’ll get back to you.</p>
+            <form onsubmit="handleSubmit(event)">
+              <input type="text" name="name" placeholder="Your name" required />
+              <input type="email" name="email" placeholder="Your email" required />
+              <textarea name="message" placeholder="Your message" required></textarea>
+              <button type="submit">Send message</button>
+            </form>
+          </div>
+
+          <div style="background:var(--card);padding:18px;border-radius:10px">
+            <h4 style="margin:0 0 8px">Availability</h4>
+            <p style="color:var(--muted);margin:0 0 12px">Open to freelance & Recruitment. Typical response time: 1–3 business days.</p>
+
+            <h4 style="margin-top:12px;margin-bottom:8px">Location</h4>
+            <p style="color:var(--muted);margin:0">Thimphu, Bhutan (Bhutan timing)</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Damchey Lhendup — Built with ❤️ • <a class="navlink" href="#">Privacy</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // small JS for interactions
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      // For demo: open mailto with prefilled body
+      const subject = encodeURIComponent('Portfolio contact from ' + data.get('name'));
+      const body = encodeURIComponent('Name: ' + data.get('name') + '\nEmail: ' + data.get('email') + '\n\n' + data.get('message'));
+      window.location.href = 'mailto:you@example.com?subject=' + subject + '&body=' + body;
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
+      });
+    });
+  </script>
+</body>
+</html>
